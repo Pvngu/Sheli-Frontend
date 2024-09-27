@@ -1,14 +1,7 @@
 <template>
-    <AddEdit
-        :addEditType="addEditType"
-        :visible="addEditVisible"
-        pageTitle="Add New Accident"
-        @closed="onCloseAddEdit"
-    />
-
     <MainPageHeader>
         <template #header>
-            <a-page-header title="Accidents" class="p-0" />
+            <a-page-header title="Areas" class="p-0" />
         </template>
         <template #breadcrumb>
             <a-breadcrumb separator="-" style="font-size: 12px">
@@ -18,7 +11,7 @@
                     </router-link>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
-                    Accidents
+                    Areas
                 </a-breadcrumb-item>
             </a-breadcrumb>
         </template>
@@ -28,9 +21,9 @@
         <a-row :gutter="[16, 16]">
             <a-col :xs="24" :sm="24" :md="12" :lg="10" :xl="10">
                 <a-space>
-                    <a-button type="primary" @click="addItem">
+                    <a-button type="primary">
                         <PlusOutlined />
-                        Add New Accident
+                        Add New Area
                     </a-button>
                 </a-space>
             </a-col>
@@ -58,11 +51,7 @@
 import { ref, onMounted } from 'vue';
 import { PlusOutlined } from '@ant-design/icons-vue';
 import MainPageHeader from '../../components/layouts/MenuPageHeader.vue';
-import crud from '../../composable/crud';
 import fields from './fields';
-import AddEdit from './AddEdit.vue';
-
-const { addItem, addEditType, addEditVisible, onCloseAddEdit } = crud();
 
 const { columns } = fields();
 </script>

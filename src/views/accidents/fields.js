@@ -5,7 +5,7 @@ const fields = () => {
             dataIndex: 'date',
         },
         {
-            title: 'injured Person',
+            title: 'Injured Person',
             dataIndex: 'injured_person',
         },
         {

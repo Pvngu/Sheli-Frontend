@@ -19,7 +19,13 @@
                     </a-col>
                     <a-col :span="24">
                         <a-form-item>
-                            <a-button block type="primary" html-type="submit">Login</a-button>
+                            <a-button 
+                                block 
+                                type="primary"
+                                @click="() => $router.push({ name: 'dashboard.index' })"
+                            >
+                            Login
+                            </a-button>
                         </a-form-item>
                     </a-col>
                 </a-row>
