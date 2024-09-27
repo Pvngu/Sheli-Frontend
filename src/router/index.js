@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import AuthRoutes from './auth'
 import Dashboard from './dashboard'
+import accidents from './accidents'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -11,7 +12,8 @@ const router = createRouter({
             redirect: '/login'
         },
         ...AuthRoutes,
-        ...Dashboard
+        ...Dashboard,
+        ...accidents
     ]
 })
 

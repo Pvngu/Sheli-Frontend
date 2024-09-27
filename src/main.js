@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import './axios'
 import './style.css'
+import './less/custom.less'
 import App from './views/App.vue'
 import router from './router'
 import Antd from 'ant-design-vue';

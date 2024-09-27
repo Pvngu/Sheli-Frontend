@@ -1,4 +1,4 @@
-import Dashboard from '../views/Dashboard.vue';
+import AccidentIndex from '../views/accidents/index.vue'
 
 export default [
     {
@@ -6,11 +6,11 @@ export default [
         component: () => import('../components/layouts/MainMenu.vue'),
         children: [
             {
-                path: '/dashboard',
-                component: Dashboard,
-                name: 'dashboard.index',
+                path: '/accidents',
+                component: AccidentIndex,
+                name: 'accidents.index',
                 meta: {
-                    menuKey: 'dashboard',
+                    menuKey: 'accidents',
                 }
             }
         ]
