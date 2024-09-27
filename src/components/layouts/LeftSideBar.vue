@@ -23,7 +23,10 @@
                 <FileTextOutlined />
                 <span>Reports</span>
             </a-menu-item>
-            <a-menu-item key="areas">
+            <a-menu-item 
+                @click="() => $router.push({ name: 'areas.index' })"
+                key="areas"
+            >
                 <EnvironmentOutlined />
                 <span>Areas</span>
             </a-menu-item>

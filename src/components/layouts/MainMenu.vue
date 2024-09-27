@@ -18,10 +18,6 @@ import { MenuOutlined } from '@ant-design/icons-vue';
 import LeftSideBar from './LeftSideBar.vue';
 const collapsed = ref(false);
 
-onMounted(() => {
-    console.log('Main menu mounted');
-});
-
 </script>
 
 <style scoped>
