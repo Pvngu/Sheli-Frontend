@@ -19,10 +19,10 @@
                 <AlertOutlined />
                 <span>Accidents</span>
             </a-menu-item>
-            <a-menu-item key="reports">
+            <!-- <a-menu-item key="reports">
                 <FileTextOutlined />
                 <span>Reports</span>
-            </a-menu-item>
+            </a-menu-item> -->
             <a-menu-item 
                 @click="() => $router.push({ name: 'areas.index' })"
                 key="areas"
@@ -30,22 +30,28 @@
                 <EnvironmentOutlined />
                 <span>Areas</span>
             </a-menu-item>
-            <a-menu-item key="orders">
+            <!-- <a-menu-item key="orders">
                 <ShoppingCartOutlined />
                 <span>Orders</span>
             </a-menu-item>
             <a-menu-item key="consumables">
                 <ToolOutlined />
                 <span>Consumables</span>
-            </a-menu-item>
+            </a-menu-item> -->
             <a-sub-menu key="7" title="User Management">
                 <template #icon>
                     <UserOutlined />
                 </template>
-                <a-menu-item key="7-1">
+                <a-menu-item 
+                    @click="() => $router.push({ name: 'users.index' })"
+                    key="users"
+                >
                     <span>Users</span>
                 </a-menu-item>
-                <a-menu-item key="7-2">
+                <a-menu-item 
+                    @click="() => $router.push({ name: 'roles.index' })"
+                    key="roles"
+                >
                     <span>Roles</span>
                 </a-menu-item>
             </a-sub-menu>

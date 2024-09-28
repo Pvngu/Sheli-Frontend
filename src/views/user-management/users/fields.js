@@ -2,7 +2,12 @@ const fields = () => {
 
     const initData = {
         name: "",
-        description: "",
+        email: "",
+        password: "",
+        created_at: "",
+        status: undefined,
+        role: undefined,
+        address: "",
     }
     const columns = [
         {
@@ -10,8 +15,16 @@ const fields = () => {
             dataIndex: 'name',
         },
         {
-            title: 'Description',
-            dataIndex: 'description',
+            title: 'Email',
+            dataIndex: 'email',
+        },
+        {
+            title: 'Created At',
+            dataIndex: 'created_at',
+        },
+        {
+            title: 'Status',
+            dataIndex: 'status',
         },
         {
             title: 'Action',

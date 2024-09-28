@@ -10,7 +10,7 @@
 
     <MainPageHeader>
         <template #header>
-            <a-page-header title="Areas" class="p-0" />
+            <a-page-header title="Roles" class="p-0" />
         </template>
         <template #breadcrumb>
             <a-breadcrumb separator="-" style="font-size: 12px">
@@ -20,7 +20,7 @@
                     </router-link>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
-                    Areas
+                    Roles
                 </a-breadcrumb-item>
             </a-breadcrumb>
         </template>
@@ -32,7 +32,7 @@
                 <a-space>
                     <a-button type="primary" @click="addItem">
                         <PlusOutlined />
-                        Add New Area
+                        Add New Role
                     </a-button>
                 </a-space>
             </a-col>
@@ -73,8 +73,8 @@
 <script>
 import { ref, onMounted } from 'vue';
 import { DeleteOutlined, PlusOutlined, EditOutlined } from '@ant-design/icons-vue';
-import MainPageHeader from '../../components/layouts/MenuPageHeader.vue';
-import crud from '../../composable/crud';
+import MainPageHeader from '../../../components/layouts/MenuPageHeader.vue';
+import crud from '../../../composable/crud';
 import fields from './fields';
 import AddEdit from './AddEdit.vue';
 
@@ -101,19 +101,19 @@ export default {
             dataSources: [
                 {
                     id: 1,
-                    name: 'Area 1',
+                    name: 'Role 1',
                     description: 'Description 1',
                     status: 'Active',
                 },
                 {
                     id: 2,
-                    name: 'Area 2',
+                    name: 'Role 2',
                     description: 'Description 2',
                     status: 'Inactive',
                 },
                 {
                     id: 3,
-                    name: 'Area 3',
+                    name: 'Role 3',
                     description: 'Description 3',
                     status: 'Active',
                 },

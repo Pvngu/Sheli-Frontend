@@ -10,7 +10,7 @@
 
     <MainPageHeader>
         <template #header>
-            <a-page-header title="Areas" class="p-0" />
+            <a-page-header title="Users" class="p-0" />
         </template>
         <template #breadcrumb>
             <a-breadcrumb separator="-" style="font-size: 12px">
@@ -20,7 +20,7 @@
                     </router-link>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
-                    Areas
+                    Users
                 </a-breadcrumb-item>
             </a-breadcrumb>
         </template>
@@ -32,7 +32,7 @@
                 <a-space>
                     <a-button type="primary" @click="addItem">
                         <PlusOutlined />
-                        Add New Area
+                        Add New User
                     </a-button>
                 </a-space>
             </a-col>
@@ -73,8 +73,8 @@
 <script>
 import { ref, onMounted } from 'vue';
 import { DeleteOutlined, PlusOutlined, EditOutlined } from '@ant-design/icons-vue';
-import MainPageHeader from '../../components/layouts/MenuPageHeader.vue';
-import crud from '../../composable/crud';
+import MainPageHeader from '../../../components/layouts/MenuPageHeader.vue';
+import crud from '../../../composable/crud';
 import fields from './fields';
 import AddEdit from './AddEdit.vue';
 
@@ -100,23 +100,45 @@ export default {
         return {
             dataSources: [
                 {
-                    id: 1,
-                    name: 'Area 1',
-                    description: 'Description 1',
+                    key: '1',
+                    name: 'John Doe',
+                    email: 'john@gmail.com',
+                    password: 'password',
+                    created_at: '2021-09-01',
                     status: 'Active',
+                    role: 'Admin',
+                    address: '123, Main Street, New York',
                 },
                 {
-                    id: 2,
-                    name: 'Area 2',
-                    description: 'Description 2',
+                    key: '2',
+                    name: 'Jane Doe',
+                    email: 'jane@gmail.com',
+                    password: 'password',
+                    created_at: '2021-09-02',
                     status: 'Inactive',
+                    role: 'User',
+                    address: '123, Main Street, New York',
                 },
                 {
-                    id: 3,
-                    name: 'Area 3',
-                    description: 'Description 3',
+                    key: '3',
+                    name: 'John Smith',
+                    email: 'smith@gmail.com',
+                    password: 'password',
+                    created_at: '2021-09-03',
                     status: 'Active',
+                    role: 'User',
+                    address: '456, Main Street, New York',
                 },
+                {
+                    key: '4',
+                    name: 'smith Doe',
+                    email: 'smithdoe544@gmail.com',
+                    password: 'password',
+                    created_at: '2021-09-04',
+                    status: 'Active',
+                    role: 'User',
+                    address: '789, Main Street, New York',
+                }
             ],
 
             columns,

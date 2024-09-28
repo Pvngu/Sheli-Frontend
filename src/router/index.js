@@ -4,6 +4,7 @@ import AuthRoutes from './auth'
 import Dashboard from './dashboard'
 import accidents from './accidents'
 import areas from './areas'
+import userManagement from './userManagement'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -15,7 +16,8 @@ const router = createRouter({
         ...AuthRoutes,
         ...Dashboard,
         ...accidents,
-        ...areas
+        ...areas,
+        ...userManagement
     ]
 })
 
