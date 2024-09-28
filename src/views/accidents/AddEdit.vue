@@ -16,6 +16,8 @@
                         name="time_of_accident"
                     >
                         <a-date-picker
+                            v-model:value="formData.date"
+                            valueFormat="yyyy-MM-dd"
                             show-time
                             style="width: 100%"
                         />
@@ -27,6 +29,7 @@
                         name="injured_person"
                     >
                         <a-select
+                            v-model:value="formData.injured_person"
                             placeholder="Select Injured Person"
                         >
                             <!-- delete when backend is ready -->
@@ -45,6 +48,7 @@
                         name="reporting_user"
                     >
                         <a-select
+                            v-model:value="formData.reporting_user"
                             placeholder="Select Reporting User"
                         >
                             <!-- delete when backend is ready -->
@@ -61,6 +65,7 @@
                         name="area"
                     >
                         <a-select
+                            v-model:value="formData.area"
                             placeholder="Select Area"
                         >
                             <!-- delete when backend is ready -->
@@ -79,6 +84,7 @@
                         name="days_absent"
                     >
                         <a-input-number
+                            v-model:value="formData.days_absent"
                             :min="1" 
                             style="width: 100%"
                         />
@@ -90,6 +96,7 @@
                         name="status"
                     >
                         <a-select
+                            v-model:value="formData.status"
                             placeholder="Select Status"
                         >
                             <!-- delete when backend is ready -->
@@ -108,6 +115,7 @@
                         name="description"
                     >
                         <a-textarea
+                            v-model:value="formData.description"
                             :rows="4"
                             placeholder="Enter Description"
                         />
@@ -124,7 +132,7 @@
                     <template #icon>
                         <SaveOutlined />
                     </template>
-                    Create
+                    {{ addEditType === "add" ? "Create" : "Update" }}
                 </a-button>
                 <a-button key="back" @click="onClose">
                     Cancel
@@ -142,7 +150,9 @@ const emit = defineEmits(["closed"]);
 
 const props = defineProps({
     pageTitle: String,
-    visible: Boolean
+    visible: Boolean,
+    addEditType: String,
+    formData: Object,
 });
 
 const drawerWidth = computed(() => {

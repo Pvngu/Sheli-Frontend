@@ -53,7 +53,9 @@
                 <SettingOutlined />
                 <span>Settings</span>
             </a-menu-item>
-            <a-menu-item key="9">
+            <a-menu-item
+                @click="() => $router.push({ name: 'login' })"
+            >
                 <LogoutOutlined />
                 <span>Logout</span>
             </a-menu-item>

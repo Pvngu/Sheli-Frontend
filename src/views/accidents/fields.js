@@ -1,4 +1,14 @@
 const fields = () => {
+
+    const initData = {
+        date: "",
+        injured_person: undefined,
+        reporting_user: undefined,
+        area: undefined,
+        days_absent: undefined,
+        description: "",
+        status: undefined,
+    }
     const columns = [
         {
             title: 'Time of Accident',
@@ -35,7 +45,8 @@ const fields = () => {
     ]
 
     return {
-        columns
+        columns,
+        initData,
     }
 }
 
