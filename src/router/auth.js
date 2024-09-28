@@ -5,5 +5,8 @@ export default [
         path: '/login',
         component: Login,
         name: 'login',
+        meta: {
+            title: 'Login - Sheli',
+        }
     },
 ]

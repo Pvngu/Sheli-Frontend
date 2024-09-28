@@ -11,6 +11,7 @@ export default [
                 component: UserIndex,
                 name: 'users.index',
                 meta: {
+                    title: 'Users - Sheli',
                     menuKey: 'users',
                 }
             },
@@ -19,6 +20,7 @@ export default [
                 component: RoleIndex,
                 name: 'roles.index',
                 meta: {
+                    title: 'Roles - Sheli',
                     menuKey: 'roles',
                 }
             }

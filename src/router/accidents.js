@@ -10,6 +10,7 @@ export default [
                 component: AccidentIndex,
                 name: 'accidents.index',
                 meta: {
+                    title: 'Accidents - Sheli',
                     menuKey: 'accidents',
                 }
             }

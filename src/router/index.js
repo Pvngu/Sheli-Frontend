@@ -21,4 +21,8 @@ const router = createRouter({
     ]
 })
 
+router.beforeEach((to, from) => {
+    document.title = to.meta?.title ?? 'Default Title'
+  })
+
 export default router

@@ -96,7 +96,8 @@ onMounted(() => {
         typeof route.meta.menuKey == "function"
             ?route.meta.menuKey(route)
             : route.meta.menuKey;
-    console.log(menuKey);
+            
+    selectedKeys.value = [menuKey.replace("-", "_")];
 });
 </script>
 

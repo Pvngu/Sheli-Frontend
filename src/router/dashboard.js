@@ -10,6 +10,7 @@ export default [
                 component: Dashboard,
                 name: 'dashboard.index',
                 meta: {
+                    title: 'Dashboard - Sheli',
                     menuKey: 'dashboard',
                 }
             }

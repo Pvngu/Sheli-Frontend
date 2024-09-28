@@ -10,6 +10,7 @@ export default [
                 component: AreaIndex,
                 name: 'areas.index',
                 meta: {
+                    title: 'Areas - Sheli',
                     menuKey: 'areas',
                 }
             }
