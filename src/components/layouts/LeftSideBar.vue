@@ -30,15 +30,26 @@
                 <EnvironmentOutlined />
                 <span>Areas</span>
             </a-menu-item>
-            <!-- <a-menu-item key="orders">
-                <ShoppingCartOutlined />
-                <span>Orders</span>
-            </a-menu-item>
-            <a-menu-item key="consumables">
-                <ToolOutlined />
-                <span>Consumables</span>
-            </a-menu-item> -->
-            <a-sub-menu key="7" title="User Management">
+            <a-sub-menu key="orders" title="Orders">
+                <template #icon>
+                    <AppstoreOutlined />
+                </template>
+                <a-menu-item
+                    @click="() => $router.push({ name: 'orders.index' })"
+                    key="orders"
+                >
+                    <InboxOutlined />
+                    <span>Orders</span>
+                </a-menu-item>
+                <a-menu-item
+                    @click="() => $router.push({ name: 'consumables.index' })"
+                    key="consumables"
+                >
+                    <ToolOutlined />
+                    <span>Consumables</span>
+                </a-menu-item>
+            </a-sub-menu>
+            <a-sub-menu key="users" title="User Management">
                 <template #icon>
                     <UserOutlined />
                 </template>
@@ -55,7 +66,14 @@
                     <span>Roles</span>
                 </a-menu-item>
             </a-sub-menu>
-            <a-menu-item key="8">
+            <a-menu-item
+                @click="() => $router.push({ name: 'chat.index' })"
+                key="chat"
+            >
+                <CommentOutlined />
+                <span>Chat</span>
+            </a-menu-item>
+            <a-menu-item key="settings">
                 <SettingOutlined />
                 <span>Settings</span>
             </a-menu-item>
@@ -81,7 +99,10 @@ import {
     ToolOutlined,
     UserOutlined,
     SettingOutlined,
-    LogoutOutlined
+    LogoutOutlined,
+    CommentOutlined,
+    AppstoreOutlined,
+    InboxOutlined
 } from '@ant-design/icons-vue';
 
 const props = defineProps({

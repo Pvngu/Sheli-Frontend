@@ -4,6 +4,8 @@ import AuthRoutes from './auth'
 import Dashboard from './dashboard'
 import accidents from './accidents'
 import areas from './areas'
+import chat from './chat'
+import orders from './orders'
 import userManagement from './userManagement'
 
 const router = createRouter({
@@ -17,7 +19,9 @@ const router = createRouter({
         ...Dashboard,
         ...accidents,
         ...areas,
-        ...userManagement
+        ...userManagement,
+        ...chat,
+        ...orders
     ]
 })
 
