@@ -4,18 +4,17 @@
         <a-form layout="vertical">
             <a-row justify="space-between">
                 <a-col>
-                    <a-upload
-                        name="image"
-                        list-type="picture-card"
-                        class="avatar-uploader"
-                        :showUploadList="false"
-                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                    >
-                        <div>
-                            <PlusOutlined />
-                            <div class="ant-upload-text">Upload</div>
-                        </div>
-                    </a-upload>
+                    <Upload
+                        :formData="formData"
+                        folder="user"
+                        imageField="profile_image"
+                        @onFileUploaded="
+                            (file) => {
+                                formData.profile_image = file.file;
+                                formData.profile_image_url = file.file_url;
+                            }
+                        "
+                    />
                 </a-col>
                 <a-col :span="18">
                     <a-row :gutter="16">
@@ -95,24 +94,38 @@
     </a-drawer>
 </template>
 
-<script setup>
-import { defineProps, computed } from "vue";
+<script>
 import { SaveOutlined } from "@ant-design/icons-vue";
+import Upload from '../../../core/ui/Upload.vue';
 
-const emit = defineEmits(["closed"]);
+export default {
+    props: {
+        pageTitle: {
+            default: "",
+        },
+        visible: {
+            default: false,
+        },
+        addEditType: {
+            default: "add",
+        },
+        formData: {
+            default: {},
+        },
+    },
+    components: {
+        SaveOutlined,
+        Upload,
+    },
+    setup(props, { emit }) {
+        const onClose = () => {
+            emit("closed");
+        };
 
-const props = defineProps({
-    pageTitle: String,
-    visible: Boolean,
-    addEditType: String,
-    formData: Object,
-});
-
-const drawerWidth = computed(() => {
-    return window.innerWidth <= 991 ? "90%" : "45%";
-});
-
-const onClose = () => {
-    emit("closed");
-};
+        return {
+            onClose,
+            drawerWidth: window.innerWidth <= 991 ? "90%" : "45%",
+        }
+    }
+}
 </script>
