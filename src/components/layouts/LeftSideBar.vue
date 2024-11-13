@@ -1,7 +1,7 @@
 <template>
     <a-layout-sider v-model:collapsed="props.visible" :width="240" :trigger="null" collapsible>
         <div class="sidebar-logo" :class="{ collapsed: visible }">
-            <img width="30px" src="../../assets/Sheli_logo.png" alt="Sheli logo" />
+            <img width="30px" :src="logoUrl" alt="Sheli logo" />
             <span v-if="!props.visible">Sheli</span>
         </div>
         <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
@@ -30,23 +30,30 @@
                 <EnvironmentOutlined />
                 <span>Areas</span>
             </a-menu-item>
-            <a-sub-menu key="orders" title="Orders">
-                <template #icon>
-                    <AppstoreOutlined />
-                </template>
-                <a-menu-item
+            <a-menu-item
                     @click="() => $router.push({ name: 'orders.index' })"
                     key="orders"
                 >
                     <InboxOutlined />
                     <span>Orders</span>
                 </a-menu-item>
+            <a-sub-menu key="orders" title="Consumables">
+                <template #icon>
+                    <AppstoreOutlined />
+                </template>
                 <a-menu-item
                     @click="() => $router.push({ name: 'consumables.index' })"
                     key="consumables"
                 >
                     <ToolOutlined />
                     <span>Consumables</span>
+                </a-menu-item>
+                <a-menu-item
+                    @click="() => $router.push({ name: 'categories.index' })"
+                    key="categories"
+                >
+                    <TagsOutlined />
+                    <span>Categories</span>
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="users" title="User Management">
@@ -90,6 +97,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRoute } from "vue-router";
+import logoUrl from '../../assets/images/Sheli_logo.png';
 import {
     DashboardOutlined,
     AlertOutlined,
@@ -102,7 +110,8 @@ import {
     LogoutOutlined,
     CommentOutlined,
     AppstoreOutlined,
-    InboxOutlined
+    InboxOutlined,
+    TagsOutlined,
 } from '@ant-design/icons-vue';
 
 const props = defineProps({

@@ -10,7 +10,7 @@
 
     <MainPageHeader>
         <template #header>
-            <a-page-header title="Consumables" class="p-0" />
+            <a-page-header title="Categories" class="p-0" />
         </template>
         <template #breadcrumb>
             <a-breadcrumb separator="-" style="font-size: 12px">
@@ -20,7 +20,7 @@
                     </router-link>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
-                    Consumables
+                    Categories
                 </a-breadcrumb-item>
             </a-breadcrumb>
         </template>
@@ -32,7 +32,7 @@
                 <a-space>
                     <a-button type="primary" @click="addItem">
                         <PlusOutlined />
-                        Add New Consumable
+                        Add New Category
                     </a-button>
                 </a-space>
             </a-col>
@@ -50,13 +50,6 @@
                         :dataSource="dataSources"
                     >
                         <template #bodyCell="{ column, record }">
-                            <template v-if="column.dataIndex === 'image'">
-                                <a-image 
-                                    src="/" 
-                                    width="60px"
-                                    :fallback="notFoundImgUrl"
-                                />
-                            </template>
                             <template v-if="column.dataIndex === 'action'">
                                 <a-button type="primary" @click="editItem(record)">
                                     <template #icon>
@@ -84,7 +77,6 @@ import MainPageHeader from '../../components/layouts/MenuPageHeader.vue';
 import crud from '../../composable/crud';
 import fields from './fields';
 import AddEdit from './AddEdit.vue';
-import notFoundImgUrl from '../../assets/images/image_not_found.png';
 
 export default {
     components: {
@@ -108,30 +100,26 @@ export default {
             dataSources: [
                 {
                     id: 1,
-                    name: 'Consumable 1',
+                    name: 'Category 1',
                     description: 'Description 1',
                     status: 'Active',
-                    type: 'Type 1',
                 },
                 {
                     id: 2,
-                    name: 'Consumable 2',
+                    name: 'Category 2',
                     description: 'Description 2',
                     status: 'Inactive',
-                    type: 'Type 2',
                 },
                 {
                     id: 3,
-                    name: 'Consumable 3',
+                    name: 'Category 3',
                     description: 'Description 3',
                     status: 'Active',
-                    type: 'Type 3',
                 },
             ],
 
             columns,
             ...crudVariables,
-            notFoundImgUrl,
         }
     }
 }

@@ -6,6 +6,7 @@ import accidents from './accidents'
 import areas from './areas'
 import chat from './chat'
 import orders from './orders'
+import consumables from './consumables'
 import userManagement from './userManagement'
 
 const router = createRouter({
@@ -21,7 +22,8 @@ const router = createRouter({
         ...areas,
         ...userManagement,
         ...chat,
-        ...orders
+        ...orders,
+        ...consumables
     ]
 })
 

@@ -1,5 +1,4 @@
 import OrderIndex from '../views/orders/index.vue'
-import ConsumableIndex from '../views/consumables/index.vue'
 
 export default [
     {
@@ -15,15 +14,6 @@ export default [
                     menuKey: 'orders',
                 }
             },
-            {
-                path: '/consumables',
-                component: ConsumableIndex,
-                name: 'consumables.index',
-                meta: {
-                    title: 'Consumables - Sheli',
-                    menuKey: 'consumables',
-                }
-            }
         ]
     },
 ]
