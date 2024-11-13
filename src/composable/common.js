@@ -80,7 +80,10 @@ const common = () => {
         formatRelativeTime,
         formatDayOrDate,
         formatTime,
-        formatDateTime
+        formatDateTime,
+
+        appSetting,
+        dayjs,
     }
 }
 
