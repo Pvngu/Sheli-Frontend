@@ -2,48 +2,66 @@
     <a-drawer :title="pageTitle" :width="drawerWidth" :open="visible" :body-style="{ paddingBottom: '80px' }"
         :footer-style="{ textAlign: 'right' }" :maskClosable="false" @close="onClose">
         <a-form layout="vertical">
-            <a-row :gutter="16">
-                <a-col :xs="24" :sm="24" :md="12" :lg="12">
-                    <a-form-item label="Name" name="name">
-                        <a-input v-model:value="formData.name" placeholder="Enter Name" />
-                    </a-form-item>
+            <a-row justify="space-between">
+                <a-col>
+                    <a-upload
+                        name="image"
+                        list-type="picture-card"
+                        class="avatar-uploader"
+                        :showUploadList="false"
+                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    >
+                        <div>
+                            <PlusOutlined />
+                            <div class="ant-upload-text">Upload</div>
+                        </div>
+                    </a-upload>
                 </a-col>
-                <a-col :xs="24" :sm="24" :md="12" :lg="12">
-                    <a-form-item label="Email" name="email">
-                        <a-input v-model:value="formData.email" placeholder="Enter Email" />
-                    </a-form-item>
-                </a-col>
-            </a-row>
-            <a-row :gutter="16">
-                <a-col :xs="24" :sm="24" :md="12" :lg="12">
-                    <a-form-item label="Password" name="password">
-                        <a-input-password v-model:value="formData.password" placeholder="Enter Password" />
-                    </a-form-item>
-                </a-col>
-                <a-col :xs="24" :sm="24" :md="12" :lg="12">
-                    <a-form-item label="Confirm Password" name="confirmPassword">
-                        <a-input-password v-model:value="formData.confirmPassword" placeholder="Confirm Password" />
-                    </a-form-item>
-                </a-col>
-            </a-row>
-            <a-row :gutter="16">
-                <a-col :xs="24" :sm="24" :md="12" :lg="12">
-                    <a-form-item label="Status" name="status">
-                        <a-select v-model:value="formData.status" placeholder="Select Status">
-                            <a-select-option value="active">Active</a-select-option>
-                            <a-select-option value="inactive">Inactive</a-select-option>
-                        </a-select>
-                    </a-form-item>
-                </a-col>
-                <a-col :xs="24" :sm="24" :md="12" :lg="12">
-                    <a-form-item label="Role" name="role">
-                        <a-select v-model:value="formData.role" placeholder="Select Role">
-                            <!-- delete when backend is ready -->
-                            <a-select-option value="admin">Admin</a-select-option>
-                            <a-select-option value="user">User</a-select-option>
-                            <!-- delete when backend is ready -->
-                        </a-select>
-                    </a-form-item>
+                <a-col :span="18">
+                    <a-row :gutter="16">
+                        <a-col :xs="24" :sm="24" :md="12" :lg="12">
+                            <a-form-item label="Name" name="name">
+                                <a-input v-model:value="formData.name" placeholder="Enter Name" />
+                            </a-form-item>
+                        </a-col>
+                        <a-col :xs="24" :sm="24" :md="12" :lg="12">
+                            <a-form-item label="Email" name="email">
+                                <a-input v-model:value="formData.email" placeholder="Enter Email" />
+                            </a-form-item>
+                        </a-col>
+                    </a-row>
+                    <a-row :gutter="16">
+                        <a-col :xs="24" :sm="24" :md="12" :lg="12">
+                            <a-form-item label="Password" name="password">
+                                <a-input-password v-model:value="formData.password" placeholder="Enter Password" />
+                            </a-form-item>
+                        </a-col>
+                        <a-col :xs="24" :sm="24" :md="12" :lg="12">
+                            <a-form-item label="Confirm Password" name="confirmPassword">
+                                <a-input-password v-model:value="formData.confirmPassword" placeholder="Confirm Password" />
+                            </a-form-item>
+                        </a-col>
+                    </a-row>
+                    <a-row :gutter="16">
+                        <a-col :xs="24" :sm="24" :md="12" :lg="12">
+                            <a-form-item label="Status" name="status">
+                                <a-select v-model:value="formData.status" placeholder="Select Status">
+                                    <a-select-option value="active">Active</a-select-option>
+                                    <a-select-option value="inactive">Inactive</a-select-option>
+                                </a-select>
+                            </a-form-item>
+                        </a-col>
+                        <a-col :xs="24" :sm="24" :md="12" :lg="12">
+                            <a-form-item label="Role" name="role">
+                                <a-select v-model:value="formData.role" placeholder="Select Role">
+                                    <!-- delete when backend is ready -->
+                                    <a-select-option value="admin">Admin</a-select-option>
+                                    <a-select-option value="user">User</a-select-option>
+                                    <!-- delete when backend is ready -->
+                                </a-select>
+                            </a-form-item>
+                        </a-col>
+                    </a-row>
                 </a-col>
             </a-row>
             <a-row :glutter="[16, 16]">

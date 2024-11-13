@@ -50,6 +50,20 @@
                         :dataSource="dataSources"
                     >
                         <template #bodyCell="{ column, record }">
+                            <template v-if="column.dataIndex === 'name'">
+                                <a-space>
+                                    <a-avatar />
+                                    <span>
+                                        <a-typography-link>
+                                            {{ record.name }}
+                                        </a-typography-link>
+                                        <br>
+                                        <small>
+                                            {{ record.role }}
+                                        </small>
+                                    </span>
+                                </a-space>
+                            </template>
                             <template v-if="column.dataIndex === 'action'">
                                 <a-button type="primary" @click="editItem(record)">
                                     <template #icon>
