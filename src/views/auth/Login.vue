@@ -2,7 +2,7 @@
     <main class="login-container">
         <a-card style="max-width: 320px; margin: 0 auto;" :title="null">
             <div class="card-header">
-                <img width="38px" src="../../assets/Sheli_logo.png" alt="Sheli logo" />
+                <img width="38px" :src="logoUrl" alt="Sheli logo" />
                 <span class="logo-title">Sheli</span>
             </div>
             <a-form layout="vertical">
@@ -58,4 +58,5 @@
 <script setup>
 import { reactive } from "vue";
 import { MailOutlined, LockOutlined } from "@ant-design/icons-vue";
+import logoUrl from '../../assets/images/Sheli_logo.png';
 </script>
