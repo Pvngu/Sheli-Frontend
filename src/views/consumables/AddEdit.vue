@@ -33,6 +33,21 @@
                             placeholder="Enter Name"
                         />
                     </a-form-item>
+                    <a-form-item
+                        label="Category"
+                        name="category_id"
+                    >
+                        <a-select
+                            v-model:value="formData.category_id"
+                            placeholder="Select Category"
+                        >
+                            <a-select-option
+                                value="1"
+                            >
+                                Category 1
+                            </a-select-option>
+                        </a-select>
+                    </a-form-item>
                 </a-col>
             </a-row>
             <a-row :glutter="[16, 16]">

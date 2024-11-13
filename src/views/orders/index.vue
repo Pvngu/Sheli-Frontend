@@ -17,18 +17,18 @@
         </template>
     </MainPageHeader>
 
-    <!-- <menu-page-filters>
+    <menu-page-filters>
         <a-row :gutter="[16, 16]">
             <a-col :xs="24" :sm="24" :md="12" :lg="10" :xl="10">
                 <a-space>
                     <a-button type="primary" @click="addItem">
                         <PlusOutlined />
-                        Add New Order
+                        Place An Order
                     </a-button>
                 </a-space>
             </a-col>
         </a-row>
-    </menu-page-filters> -->
+    </menu-page-filters>
 
     <menu-page-table-content>
         <a-row>
@@ -82,12 +82,13 @@ import MainPageHeader from '../../components/layouts/MenuPageHeader.vue';
 import crud from '../../composable/crud';
 import common from '../../composable/common.js';
 import fields from './fields';
-import { EyeOutlined, DeleteOutlined } from '@ant-design/icons-vue';
+import { EyeOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons-vue';
 
 export default {
     components: {
         EyeOutlined,
         DeleteOutlined,
+        PlusOutlined,
         MainPageHeader
     },
     setup() {

@@ -3,6 +3,7 @@ const fields = () => {
     const initData = {
         image: "",
         name: "",
+        category_id: "",
         description: "",
     }
 
@@ -21,8 +22,8 @@ const fields = () => {
             dataIndex: 'description',
         },
         {
-            title: 'Type',
-            dataIndex: 'type',
+            title: 'Category',
+            dataIndex: 'category',
         },
         {
             title: 'Action',
