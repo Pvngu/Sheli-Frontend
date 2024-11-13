@@ -45,6 +45,9 @@
                 <div class="table-responsive">
                     <a-table :columns="columns" bordered size="middle" :dataSource="dataSources">
                         <template #bodyCell="{ column, record }">
+                            <template v-if="column.dataIndex === 'date'">
+                                {{ formatDateTime(record.date) }}
+                            </template>
                             <template v-if="column.dataIndex === 'action'">
                                 <a-button type="primary" @click="editItem(record)">
                                     <template #icon>
@@ -72,6 +75,7 @@ import MainPageHeader from '../../components/layouts/MenuPageHeader.vue';
 import crud from '../../composable/crud';
 import fields from './fields';
 import AddEdit from './AddEdit.vue';
+import common from '../../composable/common.js';
 
 export default {
     components: {
@@ -83,6 +87,7 @@ export default {
     },
     setup() {
         const crudVariables = crud();
+        const { formatDateTime } = common();
         const { columns, initData } = fields();
 
         onMounted(() => {
@@ -93,10 +98,11 @@ export default {
         });
 
         return {
+            formatDateTime,
             dataSources: [
                 {
                     key: '1',
-                    date: '2023-10-01',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'John Doe',
                     reporting_user: 'Jane Smith',
                     area: 'Warehouse',
@@ -106,7 +112,7 @@ export default {
                 },
                 {
                     key: '2',
-                    date: '2023-10-02',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Alice Johnson',
                     reporting_user: 'Bob Brown',
                     area: 'Office',
@@ -116,7 +122,7 @@ export default {
                 },
                 {
                     key: '3',
-                    date: '2023-10-03',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Michael Green',
                     reporting_user: 'Sara White',
                     area: 'Parking Lot',
@@ -126,7 +132,7 @@ export default {
                 },
                 {
                     key: '4',
-                    date: '2023-10-04',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'David Black',
                     reporting_user: 'Emily Grey',
                     area: 'Cafeteria',
@@ -136,7 +142,7 @@ export default {
                 },
                 {
                     key: '5',
-                    date: '2023-10-05',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Olivia Brown',
                     reporting_user: 'James Green',
                     area: 'Warehouse',
@@ -146,7 +152,7 @@ export default {
                 },
                 {
                     key: '6',
-                    date: '2023-10-06',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Sophia White',
                     reporting_user: 'Daniel Black',
                     area: 'Office',
@@ -156,7 +162,7 @@ export default {
                 },
                 {
                     key: '7',
-                    date: '2023-10-07',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Ethan Grey',
                     reporting_user: 'Ava Brown',
                     area: 'Parking Lot',
@@ -166,7 +172,7 @@ export default {
                 },
                 {
                     key: '8',
-                    date: '2023-10-08',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Isabella Green',
                     reporting_user: 'Noah White',
                     area: 'Cafeteria',
@@ -176,7 +182,7 @@ export default {
                 },
                 {
                     key: '9',
-                    date: '2023-10-09',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Mia Black',
                     reporting_user: 'Liam Green',
                     area: 'Warehouse',
@@ -186,7 +192,7 @@ export default {
                 },
                 {
                     key: '10',
-                    date: '2023-10-10',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Lucas Brown',
                     reporting_user: 'Emma White',
                     area: 'Office',
@@ -196,7 +202,7 @@ export default {
                 },
                 {
                     key: '11',
-                    date: '2023-10-11',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Avery White',
                     reporting_user: 'Logan Black',
                     area: 'Parking Lot',
@@ -206,7 +212,7 @@ export default {
                 },
                 {
                     key: '12',
-                    date: '2023-10-12',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Evelyn Grey',
                     reporting_user: 'Oliver Green',
                     area: 'Cafeteria',
@@ -216,7 +222,7 @@ export default {
                 },
                 {
                     key: '13',
-                    date: '2023-10-13',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Elijah Green',
                     reporting_user: 'Aria Brown',
                     area: 'Warehouse',
@@ -226,7 +232,7 @@ export default {
                 },
                 {
                     key: '14',
-                    date: '2023-10-14',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Scarlett Black',
                     reporting_user: 'Carter White',
                     area: 'Office',
@@ -236,7 +242,7 @@ export default {
                 },
                 {
                     key: '15',
-                    date: '2023-10-15',
+                    date: '2024-11-12T12:34:56',
                     injured_person: 'Grayson Brown',
                     reporting_user: 'Luna Green',
                     area: 'Parking Lot',
