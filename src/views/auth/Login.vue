@@ -9,12 +9,12 @@
                 <a-row>
                     <a-col :span="24">
                         <a-form-item label="Email Address" name="email">
-                            <a-input />
+                            <a-input v-model:value="email" />
                         </a-form-item>
                     </a-col>
                     <a-col :span="24">
                         <a-form-item label="Password" name="password">
-                            <a-input-password />
+                            <a-input-password v-model:value="password" />
                         </a-form-item>
                     </a-col>
                     <a-col :span="24">
@@ -55,8 +55,20 @@
     opacity: 0.9;
 }
 </style>
-<script setup>
-import { reactive } from "vue";
-import { MailOutlined, LockOutlined } from "@ant-design/icons-vue";
+<script>
+import { ref } from 'vue';
 import logoUrl from '../../assets/images/Sheli_logo.png';
+
+export default {
+    setup() {
+        const email = ref('admin@gmail.com');
+        const password = ref('password1234');
+
+        return {
+            logoUrl,
+            email,
+            password
+        }
+    }
+}
 </script>
