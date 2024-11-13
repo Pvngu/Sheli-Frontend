@@ -11,7 +11,7 @@ export default [
                 component: OrderIndex,
                 name: 'orders.index',
                 meta: {
-                    title: 'orders - Sheli',
+                    title: 'Orders - Sheli',
                     menuKey: 'orders',
                 }
             },
@@ -20,7 +20,7 @@ export default [
                 component: ConsumableIndex,
                 name: 'consumables.index',
                 meta: {
-                    title: 'consumables - Sheli',
+                    title: 'Consumables - Sheli',
                     menuKey: 'consumables',
                 }
             }

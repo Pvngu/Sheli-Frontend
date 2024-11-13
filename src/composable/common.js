@@ -10,6 +10,14 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(duration);
 
+const appSetting = {
+    value: {
+        timezone: 'America/Los_Angeles',
+        date_format: 'MM/DD/YYYY',
+        time_format: 'HH:mm'
+    }
+};
+
 const common = () => {
 
     // Example: 2024-11-22 -> Today or Monday or 11/22/2024
@@ -28,6 +36,23 @@ const common = () => {
         }
     };
 
+    // Example: 2024-11-22 14:30 -> 11/22/2024 14:30
+    const formatDateTime = (dateTime) => {
+        if (dateTime == undefined) {
+            return dayjs()
+                .tz(appSetting.value.timezone)
+                .format(
+                    `${appSetting.value.date_format} ${appSetting.value.time_format}`
+                )
+        } else {
+            return dayjs(dateTime)
+                .tz(appSetting.value.timezone)
+                .format(
+                    `${appSetting.value.date_format} ${appSetting.value.time_format}`
+                )
+        }
+    };
+
     // Example: 2024-11-22 14:30 -> 14:30 or Yesterday or 11/22/2024
     const formatRelativeTime = (dateTime) => {
         const durationInHours = dayjs().diff(dayjs(dateTime), 'hour');
@@ -35,14 +60,14 @@ const common = () => {
     
         if (durationInHours < 24) {
             return dayjs(dateTime)
-                .tz('America/Los_Angeles')
-                .format('MM/DD/YYYY'); // Show time
+                .tz(appSetting.value.timezone)
+                .format(appSetting.value.time_format); // Show time
         } else if (durationInDays < 2) {
             return "Yesterday"; // Show "Yesterday"
         } else {
             return dayjs(dateTime)
-                .tz('America/Los_Angeles')
-                .format('MM/DD/YYYY');
+                .tz(appSetting.value.timezone)
+                .format(appSetting.value.date_format); // Show date
         }
     };
 
@@ -54,7 +79,8 @@ const common = () => {
     return {
         formatRelativeTime,
         formatDayOrDate,
-        formatTime
+        formatTime,
+        formatDateTime
     }
 }
 
