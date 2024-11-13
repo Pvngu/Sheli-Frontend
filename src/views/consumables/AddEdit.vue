@@ -10,6 +10,20 @@
     >
         <a-form layout="vertical">
             <a-row :gutter="16">
+                <a-col>
+                    <a-upload
+                        name="image"
+                        list-type="picture-card"
+                        class="avatar-uploader"
+                        :showUploadList="false"
+                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    >
+                        <div>
+                            <PlusOutlined />
+                            <div class="ant-upload-text">Upload</div>
+                        </div>
+                    </a-upload>
+                </a-col>
                 <a-col :xs="24" :sm="24" :md="12" :lg="12">
                     <a-form-item
                         label="Name"
@@ -58,7 +72,7 @@
 
 <script setup>
 import { defineProps, computed } from "vue";
-import { SaveOutlined } from "@ant-design/icons-vue";
+import { SaveOutlined, PlusOutlined, LoadingOutlined  } from "@ant-design/icons-vue";
 
 const emit = defineEmits(["closed"]);
 
@@ -77,3 +91,19 @@ const onClose = () => {
     emit("closed");
 };
 </script>
+
+<style scoped>
+.avatar-uploader > .ant-upload {
+  width: 128px;
+  height: 128px;
+}
+.ant-upload-select-picture-card i {
+  font-size: 32px;
+  color: #999;
+}
+
+.ant-upload-select-picture-card .ant-upload-text {
+  margin-top: 8px;
+  color: #666;
+}
+</style>
