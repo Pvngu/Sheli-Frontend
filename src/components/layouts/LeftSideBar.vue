@@ -30,32 +30,6 @@
                 <EnvironmentOutlined />
                 <span>Areas</span>
             </a-menu-item>
-            <a-menu-item
-                    @click="() => $router.push({ name: 'orders.index' })"
-                    key="orders"
-                >
-                    <InboxOutlined />
-                    <span>Orders</span>
-                </a-menu-item>
-            <a-sub-menu key="orders" title="Consumables">
-                <template #icon>
-                    <AppstoreOutlined />
-                </template>
-                <a-menu-item
-                    @click="() => $router.push({ name: 'consumables.index' })"
-                    key="consumables"
-                >
-                    <ToolOutlined />
-                    <span>Consumables</span>
-                </a-menu-item>
-                <a-menu-item
-                    @click="() => $router.push({ name: 'categories.index' })"
-                    key="categories"
-                >
-                    <TagsOutlined />
-                    <span>Categories</span>
-                </a-menu-item>
-            </a-sub-menu>
             <a-sub-menu key="users" title="User Management">
                 <template #icon>
                     <UserOutlined />
